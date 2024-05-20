@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <a class="btn btn-secondary mb-3" href="{% url 'job_hunter:categories' %}">← Back to Categories</a>
+    <h1>{{ category.name }}</h1>
+    <div class="list-group mt-4">
+        {% for vacation in vacations %}
+        <div class="list-group-item mb-3 p-4">
+            <a href="{% url 'job_hunter:vacancies-detail' pk=vacation.id %}" class="text-decoration-none">
+                <h2 class="h5">{{ vacation.title }}</h2>
+                <p><strong>Salary:</strong> {{ vacation.salary }}</p>
+                <p><strong>Location:</strong> {{ vacation.location }}</p>
+                <p><strong>Experience:</strong> {{ vacation.get_experience_display }}</p>
+                <p><strong>Type of Work:</strong> {{ vacation.get_type_work_display }}</p>
+                <p><strong>Type of Work Time:</strong> {{ vacation.get_type_work_time_display }}</p>
+                <p><strong>Categories:</strong>
+                    {% for category in vacation.categories.all %}
+                        {{ category.name }}{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </p>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

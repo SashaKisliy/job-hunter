@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>{{ candidate.first_name }}'s Dashboard</h1>
+
+    <h2 class="mt-4">Your Favorites</h2>
+    <div class="row">
+        {% for favorite in candidate.favorites.all %}
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">{{ favorite.title }}</h5>
+                    <p class="card-text">{{ favorite.description|truncatewords:20 }}</p>
+                    <a href="{% url 'job_hunter:vacancies-detail' pk=favorite.id %}" class="btn btn-primary btn-sm">View Details</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p>No favorites yet.</p>
+        {% endfor %}
+    </div>
+
+    <h3 class="mt-4">Your Resumes</h3>
+    <div class="row">
+        {% for resume in candidate.resumes.all %}
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">{{ resume.title }}</h5>
+                    <a href="{% url 'job_hunter:resume-detail' pk=resume.id %}" class="btn btn-primary btn-sm">View Details</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p>No resumes yet.</p>
+        {% endfor %}
+    </div>
+
+    <a class="btn btn-primary mt-3" href="{% url 'job_hunter:resume-create' %}">Add New Resume</a>
+</div>
+{% endblock %}
