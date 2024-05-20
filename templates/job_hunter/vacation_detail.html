@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <button class="btn btn-secondary mb-3" onclick="history.back()">Back</button>
+    <h1 class="mb-4">{{ vacation.title }}</h1>
+    <p><strong>Salary:</strong> {{ vacation.salary }}</p>
+    <p><strong>Experience:</strong> {{ vacation.get_experience_display }}</p>
+    <p><strong>Description:</strong> {{ vacation.description }}</p>
+    <p><strong>Candidates:</strong> {{ vacation.candidates.count }}</p>
+    <div class="mt-4">
+        <form action="{% url 'job_hunter:apply-for-vacation' pk=vacation.id %}" method="POST" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-success btn-sm">Apply</button>
+        </form>
+
+        {% if vacation in request.user.favorites.all %}
+            <form action="{% url 'job_hunter:remove-from-favorites' pk=vacation.id %}" method="POST" style="display: inline;">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-warning btn-sm">Remove from Favorites</button>
+            </form>
+        {% else %}
+            <form action="{% url 'job_hunter:add-to-favorites' pk=vacation.id %}" method="POST" style="display: inline;">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-outline-primary btn-sm">Add to Favorites</button>
+            </form>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+  
