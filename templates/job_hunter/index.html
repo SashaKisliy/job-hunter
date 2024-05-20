@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="text-center mb-4">
+                <h1>Site for search job</h1>
+                <p>Now we have {{ vacancy_count }} actual vacancies.</p>
+            </div>
+            <form method="GET" action="{% url 'job_hunter:search' %}" class="form-inline">
+                <div class="form-group mx-sm-3 mb-2">
+                    {{ form.query|as_crispy_field }}
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    {{ form.location|as_crispy_field }}
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">Search vacancies</button>
+            </form>
+          <div class="d-flex justify-content-around">
+            <a href="{% url 'job_hunter:categories' %}" class="btn btn-light">By categories</a>
+        </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

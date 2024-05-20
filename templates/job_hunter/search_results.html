@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <a href="{% url 'job_hunter:index' %}" class="btn btn-secondary mb-3">← Search vacancy</a>
+    <h1 class="mb-4">Search Results:</h1>
+    {% if vacancies %}
+        <ul class="list-group">
+            {% for vacancy in vacancies %}
+                <li class="list-group-item mb-3">
+                    <h2><a href="{% url 'job_hunter:vacancies-detail' pk=vacancy.id %}">{{ vacancy.title }}</a></h2>
+                    <p><strong>Salary:</strong> {{ vacancy.salary }}</p>
+                    <p><strong>Experience:</strong> {{ vacancy.get_experience_display }}</p>
+                    <p><strong>Description:</strong> {{ vacancy.description }}</p>
+                    <p><strong>Location:</strong> {{ vacancy.location }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No vacancies found.</p>
+    {% endif %}
+</div>
+{% endblock %}
