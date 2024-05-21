@@ -27,7 +27,7 @@ SECRET_KEY = config('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DJANGO_DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = ["ob-hunter-g5au.onrender.com"]
+ALLOWED_HOSTS = ['job-hunter-g5au.onrender.com']
 
 
 # Application definition
