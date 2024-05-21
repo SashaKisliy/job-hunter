@@ -1,0 +1,390 @@
+[
+{
+    "model": "job_hunter.category",
+    "pk": 1,
+    "fields": {
+        "name": "Python"
+    }
+},
+{
+    "model": "job_hunter.category",
+    "pk": 2,
+    "fields": {
+        "name": "Administration"
+    }
+},
+{
+    "model": "job_hunter.category",
+    "pk": 3,
+    "fields": {
+        "name": "Java"
+    }
+},
+{
+    "model": "job_hunter.category",
+    "pk": 4,
+    "fields": {
+        "name": "IT"
+    }
+},
+{
+    "model": "job_hunter.category",
+    "pk": 5,
+    "fields": {
+        "name": "C/C++"
+    }
+},
+{
+    "model": "job_hunter.category",
+    "pk": 6,
+    "fields": {
+        "name": "Java Script"
+    }
+},
+{
+    "model": "job_hunter.category",
+    "pk": 7,
+    "fields": {
+        "name": "Back-end"
+    }
+},
+{
+    "model": "job_hunter.category",
+    "pk": 8,
+    "fields": {
+        "name": "Data Analyst"
+    }
+},
+{
+    "model": "job_hunter.resume",
+    "pk": 6,
+    "fields": {
+        "title": "Java Junior",
+        "first_name": "Alex",
+        "last_name": "Kosyan",
+        "email": "alekos@gmail.com",
+        "phone": "123-123-321",
+        "location": "Rivne",
+        "education": "High school",
+        "experience": "222",
+        "candidate": 1,
+        "categories": [
+            2
+        ]
+    }
+},
+{
+    "model": "job_hunter.resume",
+    "pk": 10,
+    "fields": {
+        "title": "C++ Senior Developer",
+        "first_name": "Admin",
+        "last_name": "Admin",
+        "email": "admin@admin.com",
+        "phone": "123-123-123",
+        "location": "Kyiv",
+        "education": "School",
+        "experience": "5_years",
+        "candidate": 1,
+        "categories": [
+            7,
+            5,
+            4,
+            1
+        ]
+    }
+},
+{
+    "model": "job_hunter.resume",
+    "pk": 11,
+    "fields": {
+        "title": "Python developer Senior",
+        "first_name": "Alexander",
+        "last_name": "Admin",
+        "email": "admin@mail.ua",
+        "phone": "123-123-123",
+        "location": "Kyiv",
+        "education": "School",
+        "experience": "5_years",
+        "candidate": 1,
+        "categories": [
+            2,
+            7
+        ]
+    }
+},
+{
+    "model": "job_hunter.resume",
+    "pk": 13,
+    "fields": {
+        "title": "Front-end Middle Developer",
+        "first_name": "Alexander",
+        "last_name": "Ahmedov",
+        "email": "alekos@gmail.com",
+        "phone": "123-123-321",
+        "location": "Kyiv",
+        "education": "Alfred Nobel Univercity",
+        "experience": "3_years",
+        "candidate": 1,
+        "categories": [
+            4,
+            3,
+            6
+        ]
+    }
+},
+{
+    "model": "job_hunter.resume",
+    "pk": 16,
+    "fields": {
+        "title": "Junior Java Dev",
+        "first_name": "Lon",
+        "last_name": "Lomachenko",
+        "email": "sano@gmail.com",
+        "phone": "123-123-433",
+        "location": "Lviv",
+        "education": "High school",
+        "experience": "3_years",
+        "candidate": 1,
+        "categories": [
+            4,
+            6
+        ]
+    }
+},
+{
+    "model": "job_hunter.resume",
+    "pk": 17,
+    "fields": {
+        "title": "Python developer",
+        "first_name": "Alexander",
+        "last_name": "Haritonov",
+        "email": "harik@gmail.com",
+        "phone": "123-123-433",
+        "location": "Kyiv",
+        "education": "High school",
+        "experience": "5_years",
+        "candidate": 5,
+        "categories": [
+            2,
+            7,
+            8,
+            4,
+            6,
+            1
+        ]
+    }
+},
+{
+    "model": "job_hunter.candidate",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$720000$l6jcb3WOefNTNiILw2RjoS$/MVlNGoTk6LytVs9LOnTjHTF5nhK85gHg35ZsTPhQvU=",
+        "last_login": "2024-05-21T12:45:05.853Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "Admin",
+        "last_name": "Admin",
+        "email": "admin@admin.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-05-18T12:45:42Z",
+        "groups": [],
+        "user_permissions": [],
+        "favorites": [
+            1,
+            3
+        ]
+    }
+},
+{
+    "model": "job_hunter.candidate",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$720000$Er2EAk0C9A172Svn07MQAi$3nY3Bl8+LgqpyiYcApMw0sGKhCXrtxmch4aW1pfXgB8=",
+        "last_login": "2024-05-18T19:09:53.324Z",
+        "is_superuser": false,
+        "username": "candidate_1",
+        "first_name": "Alexander",
+        "last_name": "Kyslyi",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-05-18T13:44:12Z",
+        "groups": [],
+        "user_permissions": [],
+        "favorites": []
+    }
+},
+{
+    "model": "job_hunter.candidate",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$720000$VnUosSFYcvKJZJPoMxFV6D$MGFiV6GzSwssZHtwax/3nbrSms4EiHzJNUKk/KtJJsM=",
+        "last_login": "2024-05-20T15:18:48.181Z",
+        "is_superuser": false,
+        "username": "alex_22",
+        "first_name": "Alexander",
+        "last_name": "Kurdacha",
+        "email": "alex@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-05-18T19:33:36.403Z",
+        "groups": [],
+        "user_permissions": [],
+        "favorites": [
+            3,
+            5
+        ]
+    }
+},
+{
+    "model": "job_hunter.candidate",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$720000$PaLYkIcV6vSyafHrCufsRy$AaylEG1gOJHgDtMktQAJB9FATaBXs1wZdhBZLw57dso=",
+        "last_login": "2024-05-18T21:22:59.620Z",
+        "is_superuser": false,
+        "username": "test_123",
+        "first_name": "Test",
+        "last_name": "Test_last",
+        "email": "test@mail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-05-18T21:22:59.245Z",
+        "groups": [],
+        "user_permissions": [],
+        "favorites": []
+    }
+},
+{
+    "model": "job_hunter.candidate",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$720000$RAyIqEUi1xD7YJjomSo7YU$EGUDJEjgXyBU863drmQKQTT7Tb6m2Nft8RK2rtGM8Zs=",
+        "last_login": "2024-05-20T22:12:31.264Z",
+        "is_superuser": false,
+        "username": "new_user23",
+        "first_name": "Vasiliy",
+        "last_name": "Sergeev",
+        "email": "news@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-05-20T22:12:30.904Z",
+        "groups": [],
+        "user_permissions": [],
+        "favorites": [
+            1,
+            3
+        ]
+    }
+},
+{
+    "model": "job_hunter.vacation",
+    "pk": 1,
+    "fields": {
+        "title": "Junior Python developer",
+        "salary": 2500,
+        "experience": "3_years",
+        "location": "Kyiv",
+        "type_work": "hybrid",
+        "type_work_time": "part_time",
+        "description": "We are looking middle Python developer",
+        "created_at": "2024-05-18T12:51:11.791Z",
+        "categories": [
+            1
+        ],
+        "candidates": [
+            1,
+            3
+        ]
+    }
+},
+{
+    "model": "job_hunter.vacation",
+    "pk": 2,
+    "fields": {
+        "title": "System Admin",
+        "salary": 300,
+        "experience": "3_years",
+        "location": "Kyiv",
+        "type_work": "hybrid",
+        "type_work_time": "full_time",
+        "description": "We are looking SA",
+        "created_at": "2024-05-18T12:53:14.413Z",
+        "categories": [
+            2
+        ],
+        "candidates": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ]
+    }
+},
+{
+    "model": "job_hunter.vacation",
+    "pk": 3,
+    "fields": {
+        "title": "C++ Senior Developer",
+        "salary": 6000,
+        "experience": "5_years",
+        "location": "Kyiv",
+        "type_work": "remote",
+        "type_work_time": "full_time",
+        "description": "We are looking for a Senior С/С++ Software Engineer to join PLVision and work on our cutting-edge networking products. This is a highly technical position that requires a candidate with 5+ years of commercial experience in the development of Embedded Applications and C/С++ programming.\r\n\r\nAs a Senior Engineer, you will contribute to a growing project for our customer that provides innovative network connectivity solutions for 5G, 4G and industrial networks. Our experienced team helps them to ensure successful business results while enabling SONiC on the client’s hardware.\r\n\r\nAt PLVison you will get valuable hands-on experience with the latest technologies and non-trivial tasks in software product development. You will collaborate with global technology leaders within open-source communities. Join us, work on the meaningful project that drives technological advancement, and secure your professional future!\r\n\r\nAbout PLVision\r\n\r\nWe are a software product development company specializing in computer networking and embedded systems. PLVision has offices in Krakow, Poland, and in Lviv, Ukraine. Founded in 2007, the company helps networking industry leaders and ambitious startups in the U.S., Israel, and the EU countries to launch innovative products.",
+        "created_at": "2024-05-19T20:08:10.007Z",
+        "categories": [
+            5,
+            4
+        ],
+        "candidates": [
+            5
+        ]
+    }
+},
+{
+    "model": "job_hunter.vacation",
+    "pk": 4,
+    "fields": {
+        "title": "Middle Back-end Developer",
+        "salary": 2500,
+        "experience": "3_years",
+        "location": "Lviv",
+        "type_work": "office",
+        "type_work_time": "full_time",
+        "description": "We are seeking an experienced Back End Developer to integrate our client into the Surescripts E-Prescription. The client has already developed the frontend independently and is actively seeking a contractor for backend development. The primary criterion is experience with Surescripts E-Prescription and proficiency in Node.js.\r\n \r\n\r\nResponsibilities: \r\n\r\n    Development and integration of backend to facilitate client interaction with the Surescripts E-Prescription network. \r\n    Optimization and maintenance of the system using best practices in development. \r\n    Participation in proposing enhancements to project efficiency and functionality. \r\n\r\n \r\n\r\nRequirements: \r\n\r\n    Experience working with Node.js. \r\n    Knowledge and experience with Surescripts E-Prescription. \r\n    Ability to work effectively remotely and in a team. \r\n    Ability to work in a fast-paced environment and quickly resolve issues. \r\n\r\n \r\n\r\nHiring process: 1)HR interview; 2)Tech interview; 3) Client interview.",
+        "created_at": "2024-05-19T20:09:51.351Z",
+        "categories": [
+            7,
+            6
+        ],
+        "candidates": [
+            1,
+            3
+        ]
+    }
+},
+{
+    "model": "job_hunter.vacation",
+    "pk": 5,
+    "fields": {
+        "title": "Senior Data Analyst",
+        "salary": 8000,
+        "experience": "5_years",
+        "location": "Dnipro",
+        "type_work": "remote",
+        "type_work_time": "full_time",
+        "description": "Hello!\r\n\r\nWe are looking for an ambitious and independent Senior Data Analyst who will set up and then manage our data infrastructure according to the modern data stack in the new B2C product (as part of Genesis ecosystem) in the travel & telecommunication market.\r\n\r\n\r\n Work format: Possibility to work fully remotely or from our offices in Warsaw or Kyiv\r\n\r\n\r\n\r\n\r\n    We are a mobile and web application (Web, iOS, Android) that enables easy and fast purchases of mobile data packages in any country in the world, leveraging eSIM technology;\r\n    Our product allows seamless use of internet services while traveling at rates much lower than roaming and without having to search for local operators or purchase physical SIM cards;\r\n    With grand ambitions, we aim to evolve our services into a comprehensive Travel App that caters to all travel-related needs, making every journey smoother.\r\n\r\n\r\nYour tasks:\r\n\r\n    Set up data infrastructure almost from the scratch and decide on key cornerstones;\r\n    Create and manage dynamic (and later on personalized) pricing logic;\r\n    Collaborate with Marketing and Product to support decision-making and drive insights, user acquisition and revenue growth (including creating dashboards);\r\n    Collaborate with the CEO to find actionable insights and support strategic-making decisions;\r\n   Design, optimize, and execute A/B testing for product, marketing and pricing needs.",
+        "created_at": "2024-05-19T20:34:51.193Z",
+        "categories": [
+            8
+        ],
+        "candidates": [
+            3
+        ]
+    }
+}
+]
