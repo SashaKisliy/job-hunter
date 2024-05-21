@@ -39,11 +39,13 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "crispy_forms",
     "crispy_bootstrap4",
+    "debug_toolbar",
     "job_hunter",
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -139,3 +141,8 @@ AUTH_USER_MODEL = "job_hunter.Candidate"
 
 LOGIN_REDIRECT_URL = "job_hunter:index"
 LOGOUT_REDIRECT_URL = "/"
+
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]

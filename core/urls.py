@@ -24,4 +24,5 @@ urlpatterns = [
     path("", include("job_hunter.urls", namespace="job_hunter")),
     path("accounts/", include("django.contrib.auth.urls")),
     path("accounts/register/", views.register, name="register"),
+    path("__debug__/", include("debug_toolbar.urls")),
 ]
