@@ -1,16 +1,26 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth import login
 from django.db.models import Count
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import (render,
+                              redirect,
+                              get_object_or_404)
 from django.urls import reverse_lazy, reverse
 from django.views import generic
-from django.contrib.auth import login
-from .forms import (CandidateRegistrationForm,
-                    ResumeForm,
-                    VacationSearchForm,
-                    SearchForm)
 
-from .models import Vacation, Candidate, Resume, Category
+from .forms import (
+    CandidateRegistrationForm,
+    ResumeForm,
+    VacationSearchForm,
+    SearchForm
+)
+
+from .models import (
+    Vacation,
+    Candidate,
+    Resume,
+    Category
+)
 
 
 def register(request):
