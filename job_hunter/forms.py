@@ -75,4 +75,3 @@ class SearchForm(forms.Form):
             attrs={"placeholder": "Print a location", "class": "form-control"}
         ),
     )
-
