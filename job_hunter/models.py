@@ -4,7 +4,9 @@ from django.urls import reverse
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(
+        max_length=255
+    )
 
     class Meta:
         ordering = ["name"]
@@ -14,24 +16,44 @@ class Category(models.Model):
 
 
 class Resume(models.Model):
-    RESUME_CHOICES = [
-        ("no_experience", "No experience"),
-        ("1_year", "1 year"),
-        ("3_years", "3 years"),
-        ("5_years", "5 years"),
-    ]
-    title = models.CharField(max_length=255)
-    first_name = models.CharField(max_length=255)
-    last_name = models.CharField(max_length=255)
+    class ExperienceChoices(models.TextChoices):
+        NO_EXPERIENCE = "no_experience", "No experience"
+        ONE_YEAR = "1_year", "1 year"
+        THREE_YEARS = "3_years", "3 years"
+        FIVE_YEARS = "5_years", "5 years"
+
+    title = models.CharField(
+        max_length=255
+    )
+    first_name = models.CharField(
+        max_length=255
+    )
+    last_name = models.CharField(
+        max_length=255
+    )
     email = models.EmailField()
-    phone = models.CharField(max_length=20)
-    location = models.CharField(max_length=255)
-    education = models.CharField(max_length=255)
-    experience = models.CharField(max_length=20, choices=RESUME_CHOICES)
-    categories = models.ManyToManyField(Category, related_name="resumes")
-    candidate = models.ForeignKey('Candidate',
-                                  related_name='resumes',
-                                  on_delete=models.CASCADE)
+    phone = models.CharField(
+        max_length=20
+    )
+    location = models.CharField(
+        max_length=255
+    )
+    education = models.CharField(
+        max_length=255
+    )
+    experience = models.CharField(
+        max_length=20,
+        choices=ExperienceChoices.choices
+    )
+    categories = models.ManyToManyField(
+        Category,
+        related_name="resumes"
+    )
+    candidate = models.ForeignKey(
+        'Candidate',
+        related_name='resumes',
+        on_delete=models.CASCADE
+    )
 
     class Meta:
         ordering = ["title"]
@@ -42,7 +64,9 @@ class Resume(models.Model):
 
 class Candidate(AbstractUser):
     favorites = models.ManyToManyField(
-        "Vacation", related_name="favorited_by", blank=True
+        "Vacation",
+        related_name="favorited_by",
+        blank=True
     )
 
     class Meta:
@@ -57,38 +81,53 @@ class Candidate(AbstractUser):
 
 
 class Vacation(models.Model):
-    EXPERIENCE_CHOICES = [
-        ("no_experience", "No experience"),
-        ("1_year", "1 year"),
-        ("3_years", "3 years"),
-        ("5_years", "5 years"),
-    ]
-    TYPE_WORK_CHOICES = [
-        ("remote", "Remote"),
-        ("hybrid", "Hybrid"),
-        ("office", "Office"),
-    ]
-    TYPE_WORK_TIMES_CHOICES = [
-        ("part_time", "Part time"),
-        ("full_time", "Full time"),
-    ]
-    title = models.CharField(max_length=255)
+    class ExperienceChoices(models.TextChoices):
+        NO_EXPERIENCE = "no_experience", "No experience"
+        ONE_YEAR = "1_year", "1 year"
+        THREE_YEARS = "3_years", "3 years"
+        FIVE_YEARS = "5_years", "5 years"
+
+    class TypeWorkChoices(models.TextChoices):
+        REMOTE = "remote", "Remote"
+        HYBRID = "hybrid", "Hybrid"
+        OFFICE = "office", "Office"
+
+    class TypeWorkTimeChoices(models.TextChoices):
+        PART_TIME = "part_time", "Part time"
+        FULL_TIME = "full_time", "Full time"
+
+    title = models.CharField(
+        max_length=255
+    )
     salary = models.BigIntegerField()
-    experience = models.CharField(max_length=20,
-                                  choices=EXPERIENCE_CHOICES)
-    location = models.CharField(max_length=255)
-    type_work = models.CharField(max_length=20,
-                                 choices=TYPE_WORK_CHOICES)
-    type_work_time = models.CharField(max_length=20,
-                                      choices=TYPE_WORK_TIMES_CHOICES)
-    description = models.TextField(blank=False,
-                                   null=False)
-    created_at = models.DateTimeField(auto_now_add=True)
-    categories = models.ManyToManyField(Category,
-                                        related_name="vacations")
-    candidates = models.ManyToManyField(Candidate,
-                                        related_name="vacations",
-                                        blank=True)
+    experience = models.CharField(
+        max_length=20,
+        choices=ExperienceChoices.choices
+    )
+    location = models.CharField(
+        max_length=255
+    )
+    type_work = models.CharField(
+        max_length=20,
+        choices=TypeWorkChoices.choices
+    )
+    type_work_time = models.CharField(
+        max_length=20,
+        choices=TypeWorkTimeChoices.choices
+    )
+    description = models.TextField()
+    created_at = models.DateTimeField(
+        auto_now_add=True
+    )
+    categories = models.ManyToManyField(
+        Category,
+        related_name="vacations"
+    )
+    candidates = models.ManyToManyField(
+        Candidate,
+        related_name="vacations",
+        blank=True
+    )
 
     class Meta:
         ordering = ["created_at"]

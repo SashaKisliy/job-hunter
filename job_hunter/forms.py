@@ -31,20 +31,22 @@ class VacationForm(forms.ModelForm):
 class VacationSearchForm(forms.Form):
     title = forms.CharField(max_length=255, required=False, label="Title")
     experience = forms.ChoiceField(
-        choices=[("", "Any")] + Vacation.EXPERIENCE_CHOICES,
+        choices=[("", "Any")] + Vacation.ExperienceChoices.choices,
         required=False,
         label="Experience",
     )
-    location = forms.CharField(max_length=255,
-                               required=False,
-                               label="Location")
+    location = forms.CharField(
+        max_length=255,
+        required=False,
+        label="Location"
+    )
     type_work = forms.ChoiceField(
-        choices=[("", "Any")] + Vacation.TYPE_WORK_CHOICES,
+        choices=[("", "Any")] + Vacation.TypeWorkChoices.choices,
         required=False,
         label="Type of Work",
     )
     type_work_time = forms.ChoiceField(
-        choices=[("", "Any")] + Vacation.TYPE_WORK_TIMES_CHOICES,
+        choices=[("", "Any")] + Vacation.TypeWorkTimeChoices.choices,
         required=False,
         label="Type of Work Time",
     )
@@ -72,5 +74,5 @@ class SearchForm(forms.Form):
         widget=forms.TextInput(
             attrs={"placeholder": "Print a location", "class": "form-control"}
         ),
-
     )
+
