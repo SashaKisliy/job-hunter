@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4">{{ resume.title }}</h1>
+    <p><strong>First name:</strong> {{ resume.first_name }}</p>
+    <p><strong>Last name:</strong> {{ resume.last_name }}</p>
+    <p><strong>Email:</strong> {{ resume.email }}</p>
+    <p><strong>Phone:</strong> {{ resume.phone }}</p>
+    <p><strong>Location:</strong> {{ resume.location }}</p>
+    <p><strong>Education:</strong> {{ resume.education }}</p>
+    <p><strong>Experience:</strong> {{ resume.experience }}</p>
+    <p><strong>Categories:</strong>
+        {% for category in resume.categories.all %}
+            {{ category.name }}
+        {% endfor %}
+    </p>
+    <div class="mt-4">
+        <form action="{% url 'job_hunter:resume-update' pk=resume.id %}" method="post" style="display: inline;">
+            {% csrf_token %}
+            <input type="submit" value="Update" class="btn btn-primary">
+        </form>
+        <form action="{% url 'job_hunter:resume-delete' pk=resume.id %}" method="post" style="display: inline;">
+            {% csrf_token %}
+            <input type="submit" value="Delete" class="btn btn-danger">
+        </form>
+    </div>
+  <button class="btn btn-primary mt-4" onclick="history.back()">Back</button>
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h1>All yours resume:</h1>
+  <ul>
+  {% for resume in candidate.resumes.all %}
+  	<li>
+      <a href="{% url 'job_hunter:resume-detail' pk=resume.id %}">{{ resume.title }}</a>
+      <a class="btn btn-danger" href=""{% url 'job_hunter:resume-delete' pk=resume.id %}>Delete</a>
+    </li>
+  {% endfor %}
+  </ul>
+{% endblock %}
